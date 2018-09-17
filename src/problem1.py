@@ -322,14 +322,13 @@ def run_test_problem1c():
 
 
 def problem1c(n):
-    actual = 1
+    sum = 1
     for k in range(2, n + 1):
         if is_prime(k) == True:
-            actual = actual * k
-        return actual
-    print(actual)
-    actual = sum_of_digits(actual)
+            sum = sum * k
+    actual = sum_of_digits(sum)
     return actual
+
     """
     What comes in:  An integer n >= 2.
     What goes out:
@@ -354,7 +353,7 @@ def problem1c(n):
            and the sum of the digits in 223092870 is 33.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
