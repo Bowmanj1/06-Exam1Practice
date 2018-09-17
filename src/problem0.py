@@ -222,6 +222,11 @@ def run_test_problem0b():
 
 
 def problem0b(n):
+    actual = 0
+    for k in range(2, n + 1):
+        if is_prime(k) == True:
+            actual = actual + 1
+    return actual
     """
     What comes in:  An integer n >= 2.
     What goes out:
@@ -238,7 +243,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -283,6 +288,13 @@ def run_test_problem0c():
 
 
 def problem0c(circle, n, window):
+    circle.attach_to(window)
+    centerx = circle.center.x
+    for k in range(n + 1):
+        circle1 = rg.Circle(rg.Point(centerx, circle.center.y), circle.radius)
+        centerx = centerx + (circle.radius * 2)
+        circle1.attach_to(window)
+        window.render(0.5)
     """
     See   problem0c_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -306,7 +318,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
